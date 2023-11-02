@@ -1,22 +1,22 @@
 #include <iostream>
-#include <string.h>
-#include <stdlib.h>
+//#include <string.h>
+//#include <stdlib.h>
 #include <vector>
 #include <fstream>
 #include <ctime>
 using namespace std;
 
 class Locatie{
-    static  void creare_locatie(vector<Locatie> l){
-        string adresa,nume;
-        int p, c;
-        cout<<"Numele locatiei:\n";cin>>nume;
-        cout<<"Adresa locatiei\n";cin>>adresa;
-        cout<<"nr max pers\n";cin>>p;
-        cout<<"cost:\n";cin>>c;
-        Locatie loc(adresa,nume,p,c);
-        l.push_back(loc);
-    }
+//    static  void creare_locatie(vector<Locatie> l){
+//        string adresa,nume;
+//        int p, c;
+//        cout<<"Numele locatiei:\n";cin>>nume;
+//        cout<<"Adresa locatiei\n";cin>>adresa;
+//        cout<<"nr max pers\n";cin>>p;
+//        cout<<"cost:\n";cin>>c;
+//        Locatie loc(adresa,nume,p,c);
+//        l.push_back(loc);
+//    }
 
 private:
     string adresa;
@@ -30,9 +30,9 @@ public:
     static int contor_ID;
 
 
-    void const afis();
+    void afis();
 
-    Locatie(string l = "",string n = "",int nr = 0, int c = -1){
+    explicit Locatie(string l = "",string n = "",int nr = 0, int c = -1){
         this->ID = contor_ID;
         contor_ID++;
         this->adresa = l;
@@ -86,17 +86,26 @@ public:
         if (!file.is_open()) {
             std::cerr << "Failed to open file: " << filename << std::endl;
         }
+        std::time_t currentTime = std::time(nullptr);
+        std::tm* localTime = std::localtime(&currentTime);
+        int hours = localTime->tm_hour;
+        int minutes = localTime->tm_min;
+        int seconds = localTime->tm_sec;
+        if (file.is_open()) {
+            file <<"ora log in: "<< hours << ":" << minutes << ":" << seconds << std::endl;
 
 
-
-    }
+        }}
 
     ~meniu() {
+
         if (file.is_open()) {
+
             file.close();
+
         }
     }
-    Locatie create_locatie();
+    static Locatie create_locatie();
     void meniu1();
 
 };
@@ -137,7 +146,7 @@ int Locatie::contor_ID=1;
 
 
 //functie de afisare
-void const Locatie::afis(){
+void  Locatie::afis(){
 
     cout<<"\nID:"<<this->ID<<"\n";
     cout<<"Adresa:"<<this->adresa<<"\n";
@@ -203,7 +212,7 @@ void meniu::meniu1(){
 
             break;
         default:
-            main();
+            exit(0);
             return;
             break;
     }
@@ -230,7 +239,7 @@ void Locatie::set_cost(){
     this->cost = c;
 }
 
-Locatie meniu::create_locatie(){
+ Locatie meniu::create_locatie(){
     string adresa,nume;
     int p, c;
     cout<<"Numele locatiei:\n";cin>>nume;
