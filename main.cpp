@@ -40,6 +40,7 @@ public:
         this->nr_pers = nr;
         this->cost = c;
     }
+
     ~Locatie();
     // Locatie(Locatie &c);
 
@@ -134,15 +135,6 @@ int main(){
 
 //Constructor de copiere
 int Locatie::contor_ID=1;
-//     Locatie::Locatie(Locatie &c){
-//     ID = contor_ID;
-//     contor_ID++;
-//     adresa = c.adresa;
-//     nume = c.nume;
-//     nr_pers = c.nr_pers;
-//     cost = c.cost;
-
-//     }
 
 
 //functie de afisare
@@ -239,7 +231,7 @@ void Locatie::set_cost(){
     this->cost = c;
 }
 
- Locatie meniu::create_locatie(){
+Locatie meniu::create_locatie(){
     string adresa,nume;
     int p, c;
     cout<<"Numele locatiei:\n";cin>>nume;
