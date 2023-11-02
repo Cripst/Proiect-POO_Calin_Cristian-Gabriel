@@ -7,16 +7,7 @@
 using namespace std;
 
 class Locatie{
-//    static  void creare_locatie(vector<Locatie> l){
-//        string adresa,nume;
-//        int p, c;
-//        cout<<"Numele locatiei:\n";cin>>nume;
-//        cout<<"Adresa locatiei\n";cin>>adresa;
-//        cout<<"nr max pers\n";cin>>p;
-//        cout<<"cost:\n";cin>>c;
-//        Locatie loc(adresa,nume,p,c);
-//        l.push_back(loc);
-//    }
+
 
 private:
     string adresa;
@@ -31,6 +22,14 @@ public:
 
 
     void afis();
+    //  Locatie(Locatie &a){
+    //     ID = a.ID;
+    //     contor_ID;
+    //     // adresa = a.adresa;
+    //     // nume = a.nume;
+    //     nr_pers = a.nr_pers;
+    //     cost = a.cost;
+    // }
 
     explicit Locatie(string l = "",string n = "",int nr = 0, int c = -1){
         this->ID = contor_ID;
@@ -40,6 +39,7 @@ public:
         this->nr_pers = nr;
         this->cost = c;
     }
+
 
     ~Locatie();
     // Locatie(Locatie &c);
@@ -133,7 +133,7 @@ int main(){
 }
 
 
-//Constructor de copiere
+
 int Locatie::contor_ID=1;
 
 
