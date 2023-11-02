@@ -2,7 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <vector>
-
+#include <fstream>
+#include <ctime>
 using namespace std;
 
 class Locatie{
@@ -27,12 +28,10 @@ private:
 
 public:
     static int contor_ID;
-    static Locatie* locatie_noua();
 
 
     void const afis();
-    //Locatie(){adresa = ""; nume = "" ;nr_pers= 1; cost = 7; ID = 0; }
-    // Locatie(string,string,int, int);
+
     Locatie(string l = "",string n = "",int nr = 0, int c = -1){
         this->ID = contor_ID;
         contor_ID++;
@@ -58,77 +57,71 @@ private:
     int varsta;
 
 public:
-    Persoana(string nume, string parola, int varsta);
+    // Constructor parametrizat
+    Persoana(string nume = "", string parola = "", int varsta = 0){
+        this->nume = nume;
+        this->parola = parola;
+        this->varsta = varsta;
+    }
+    //destructorul este definit in afara clasei
+    ~Persoana();
     void show(){
         cout<<nume<<parola<<varsta;
     }
-    void set_nume(string);
-    void set_parola(string);
-    void set_varsta(int);
+
+    //functii de setare a atributelor
+    void set_nume();
+    void set_parola();
+    void set_varsta();
 
 
 };
 class meniu{
 private:
-
+    ofstream file;
+    time_t ultima_inregistrare;
 public:
-    //void creare_locatie();
-    meniu();
+    meniu(const std::string& filename) {
+        file.open(filename);
+        if (!file.is_open()) {
+            std::cerr << "Failed to open file: " << filename << std::endl;
+        }
+
+
+
+    }
+
+    ~meniu() {
+        if (file.is_open()) {
+            file.close();
+        }
+    }
+    Locatie create_locatie();
+    void meniu1();
 
 };
 vector<Locatie> l;
-
+int z = 2;
 int main(){
-    string nume,parola;
-    int varsta;
-    cout<<"Introduceti numele:\n";
-    cin>>nume;
-    cout<<"Introduceti parola:\n";
-    cin>>parola;
-    cout<<"Introduceti varsta:\n";
-    cin>>varsta;
-    Persoana pers(nume,parola,varsta);
-
-
-    //pers.show();
 
     Locatie a("Bucuresti","novotel",3,200);
     Locatie b("Bacau","Intercontinental",3,1000);
-    Locatie* c = new Locatie("asd","asd",3,100);
-    c->set_adresa();
-    // a.locatie_noua();
     l.push_back(a);
     l.push_back(b);
-    l.push_back(*c);
 
+    Persoana pers;
+    pers.set_nume();
+    pers.set_parola();
+    pers.set_varsta();
 
-    //  Locatie c;
-    meniu log;
+    meniu log("logg.txt");
+    log.meniu1();
 
-    cin>>varsta;
-    //a.afis();
-    //b.afis();
-
-
-
-
-    // Locatie a("bucuresti","novotel",4,200);
-    // a.afis();
-    // Locatie b(a);
-    // b.afis();
+    cin>>z;
 
     return 0;
 }
 
-//Constructor prametrizat
-// Locatie::Locatie(string l = "",string n = "",int nr = 0, int c = -1){
-//     this->ID = contor_ID;
-//     contor_ID++;
-//     this->adresa = l;
-//     this->nume = n;
-//     this->nr_pers = nr;
-//     this->cost = c;
-// }
 
 //Constructor de copiere
 int Locatie::contor_ID=1;
@@ -158,48 +151,56 @@ Locatie::~Locatie(){
 
 }
 
-// Constructor persoana
-Persoana::Persoana(string nume = "", string parola = "", int varsta = 0){
-    this->nume = nume;
-    this->parola = parola;
-    this->varsta = varsta;
+
+
+Persoana::~Persoana(){
+    ofstream file;
+    file.open("date.txt");
+    file << nume;
+    file << parola;
+    file << varsta;
+    file.close();
+}
+
+void Persoana::set_nume(){
+    cout << "Introduceti numele:\n";
+    cin >> nume ;
+
+}
+void Persoana::set_parola(){
+    cout << "Introduceti parola\n";
+    cin >> parola;
+}
+void Persoana::set_varsta(){
+    cout << "Introduceti varsta\n";
+    cin >> varsta;
 }
 
 
-void Persoana::set_nume(string nume){
-    this->nume = nume;
-}
-void Persoana::set_parola(string parola){
-    this->parola = parola;
-}
-void Persoana::set_varsta(int varsta){
-    this->varsta = varsta;
-}
 
-
-
-meniu::meniu(){
+void meniu::meniu1(){
     system("cls");
-    int x;
+    int x,back;
     cout<<"1.Vezi locatii\n";
     cout<<"2.Adauga propria locatie\n";
-
     cin>>x;
     switch (x)
     {
         case 1:
-
-            for (int i =0;i<2;i++)
+            for (int i =0;i<z;i++)
                 l[i].afis();
+            cout<<"apasa orice pentru a te intoarce:\n";
+
+            cin>> back;
+            meniu1();
 
             break;
         case 2:
-            Locatie* d;
-            d= new Locatie("asd","asd",3,200);
+            l.push_back(this->create_locatie());
+            z++;
+            meniu1();
 
-            l.push_back(*d);
 
-            main();
             break;
         default:
             main();
@@ -228,22 +229,14 @@ void Locatie::set_cost(){
     cout<<"Pretul pe noapte:\n";cin>>c;
     this->cost = c;
 }
-Locatie* Locatie::locatie_noua(){
-    Locatie* nou = new Locatie;
-    nou->set_adresa();
-    nou->set_nume();
-    nou->set_nr_pers();
-    nou->set_cost();
-    return nou;
-}
 
-// void meniu::creare_locatie(){
-//     string adresa,nume;
-//     int p, c;
-//     cout<<"Numele locatiei:\n";cin>>nume;
-//     cout<<"Adresa locatiei\n";cin>>adresa;
-//     cout<<"nr max pers\n";cin>>p;
-//     cout<<"cost:\n";cin>>c;
-//     Locatie loc(adresa,nume,p,c);
-//     l.push_back(loc);
-// }
+Locatie meniu::create_locatie(){
+    string adresa,nume;
+    int p, c;
+    cout<<"Numele locatiei:\n";cin>>nume;
+    cout<<"Adresa locatiei\n";cin>>adresa;
+    cout<<"nr max pers\n";cin>>p;
+    cout<<"cost:\n";cin>>c;
+    Locatie loc(adresa,nume,p,c);
+    return loc;
+}
