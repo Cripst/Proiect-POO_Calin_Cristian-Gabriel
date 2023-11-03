@@ -108,7 +108,7 @@ public:
     }
     static Locatie create_locatie();
     void meniu1();
-
+///sadfasdf
 };
 vector<Locatie> l;
 int z = 2;
