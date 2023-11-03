@@ -177,7 +177,7 @@ void Persoana::set_varsta(){
     cin >> varsta;
 }
 
-
+dsd
 
 void meniu::meniu1(){
     system("cls");
