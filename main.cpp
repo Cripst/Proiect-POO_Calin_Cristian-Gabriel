@@ -2,7 +2,7 @@
 #include "User.h"
 #include "Meniu.h"
 #include "variables.h"
-//a
+
 std::vector<Property> l;
 int z = 2;
 int main(){
