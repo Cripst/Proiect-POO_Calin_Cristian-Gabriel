@@ -16,7 +16,7 @@
 
 class meniu{
 private:
-    std::unique_ptr<Apartment>;
+
 
     std::ofstream file;
 //    time_t ultima_inregistrare;
