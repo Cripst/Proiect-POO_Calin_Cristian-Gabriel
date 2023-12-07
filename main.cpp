@@ -6,7 +6,7 @@
 #include "House.h"
 #include "Cabin.h"
 #include <memory>
-
+//a
 std::vector<std::shared_ptr<Property>> m;
 std::shared_ptr<Apartment> a = std::make_shared<Apartment>("Bucuresti","Ceva",3,200,4);
 std::shared_ptr<House> b = std::make_shared<House>("a","a",2,1,"yes");
