@@ -2,7 +2,7 @@
 // Created by crist on 12/7/2023.
 //
 
-#include "InvalideAtributeExceptions.h"
+#include "../headers/InvalideAtributeExceptions.h"
 
 
 

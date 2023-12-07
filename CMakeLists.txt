@@ -91,28 +91,29 @@ endfunction()
 
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${PROJECT_NAME} main.cpp
-        Listing.cpp
-        Listing.h
-        Property.cpp
-        Property.h
-        User.cpp
-        User.h
-        User.cpp
-        User.h
-        User.cpp
-        Meniu.cpp
-        Meniu.h
-        variables.h
-        Apartament.cpp
-        Apartament.h
-        House.cpp
-        House.h
-        Cabin.cpp
-        Cabin.h
-        Room.cpp
-        Room.h
-        InvalideAtributeExceptions.cpp
-        InvalideAtributeExceptions.h
+        src/Listing.cpp
+        headers/Listing.h
+        src/Property.cpp
+        headers/Property.h
+        src/User.cpp
+        headers/User.h
+        src/User.cpp
+        headers/User.h
+        src/User.cpp
+        src/Meniu.cpp
+        headers/Meniu.h
+        headers/variables.h
+        src/Apartament.cpp
+        headers/Apartament.h
+        src/House.cpp
+        headers/House.h
+        src/Cabin.cpp
+        headers/Cabin.h
+        src/Room.cpp
+        headers/Room.h
+        src/InvalideAtributeExceptions.cpp
+        headers/InvalideAtributeExceptions.h
+        headers/headers.h
 )
 
 ###############################################################################

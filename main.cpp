@@ -1,11 +1,4 @@
-#include "Property.h"
-#include "User.h"
-#include "Meniu.h"
-#include "variables.h"
-#include "Apartament.h"
-#include "House.h"
-#include "Cabin.h"
-#include <memory>
+#include"headers/headers.h"
 std::vector<std::shared_ptr<Property>> m;
 std::shared_ptr<Apartment> a = std::make_shared<Apartment>("Bucuresti","Ceva",3,200,4);
 std::shared_ptr<House> b = std::make_shared<House>("a","a",2,1,"yes");
@@ -27,9 +20,9 @@ int main(){
     m.push_back(c);
 
     Persoana pers;
-    pers.set_nume();
-    pers.set_parola();
-    pers.set_varsta();
+    pers.set_name();
+    pers.set_password();
+    pers.set_age();
 
     log.meniu1(m);
 

@@ -2,14 +2,14 @@
 // Created by crist on 12/6/2023.
 //
 
-#include "Apartament.h"
+#include "../headers/Apartament.h"
 Apartment::Apartment(const std::string& l,const std::string& n ,int nr, int c, int floor){
-    this->ID = contor_ID;
-    contor_ID++;
-    this->adresa = l;
-    this->nume = n;
-    this->nr_pers = nr;
-    this->cost = c;
+    this->ID = ID_count;
+    ID_count++;
+    this->adress = l;
+    this->name = n;
+    this->max_pers = nr;
+    this->price = c;
     this->floor = floor;
 }
 void Apartment::define(){
