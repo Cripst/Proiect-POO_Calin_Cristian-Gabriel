@@ -110,7 +110,7 @@ void meniu::meniu1(std::vector<std::shared_ptr<Property>> l){
 //
 //    return prop;
 //}
-//a
+//aa
 //void meniu::meniu2(std::vector<Property> l ){
 //    std::cout<<"Property type:";
 //    std::cout<<"1.Apartament"<<std::endl;
