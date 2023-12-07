@@ -23,12 +23,12 @@ void Property::def(){
 
 void Property::set_adresa(){
 
-    std::cout << "Adresa:\n";
+    std::cout << "City:\n";
     std::cin >> adress;
 }
 
 void Property::set_nume(){
-    std::cout << "Nume:\n";
+    std::cout << "Name:\n";
     std::cin >> name;
 }
 
