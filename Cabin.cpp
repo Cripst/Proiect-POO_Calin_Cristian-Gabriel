@@ -19,6 +19,7 @@ void Cabin::define(){
     std::cout<<"Is placed (woods, mountain, ect.): ";std::cin>>garden;
 }
 void Cabin::afis2(){
+    std::cout<<"Type: Cabin";
     afis();
     std::cout<<"It is situated: "<<garden<<std::endl;
 };

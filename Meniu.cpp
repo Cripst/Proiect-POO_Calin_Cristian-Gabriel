@@ -34,7 +34,7 @@ meniu::meniu(const std::string& filename) {
 
 
 
-void meniu::meniu1(std::vector<std::shared_ptr<Property>> l, int z){
+void meniu::meniu1(const std::vector<std::shared_ptr<Property>>& l){
 //    system("cls");
     int x,back;
     std::cout<<"1.Vezi locatii\n";
@@ -50,7 +50,7 @@ void meniu::meniu1(std::vector<std::shared_ptr<Property>> l, int z){
             std::cout<<"apasa orice pentru a te intoarce:\n";
 
             std::cin>> back;
-            meniu1(l,z);
+            meniu1(l);
 
             break;
         case 2:
@@ -59,7 +59,7 @@ void meniu::meniu1(std::vector<std::shared_ptr<Property>> l, int z){
 //
 //            l.push_back(this->create_Property());
 
-            meniu1(l,z);
+            meniu1(l);
 
 
             break;
@@ -89,16 +89,16 @@ void meniu::meniu1(std::vector<std::shared_ptr<Property>> l, int z){
 //    return prop;
 //}
 
-void meniu::meniu2(std::vector<Property> l ){
-    std::cout<<"Property type:";
-    std::cout<<"1.Apartament"<<std::endl;
-    std::cout<<"2.House"<<std::endl;
-    std::cout<<"3.Cabin"<<std::endl;
-    int x;
-    std::cin>>x;
-    if(x==1){
-
-    }
-
-
-}
+//void meniu::meniu2(std::vector<Property> l ){
+//    std::cout<<"Property type:";
+//    std::cout<<"1.Apartament"<<std::endl;
+//    std::cout<<"2.House"<<std::endl;
+//    std::cout<<"3.Cabin"<<std::endl;
+//    int x;
+//    std::cin>>x;
+//    if(x==1){
+//
+//    }
+//
+//
+//}

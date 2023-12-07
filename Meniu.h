@@ -20,8 +20,8 @@ public:
 
     ~meniu();
     static Property create_Property();
-    void meniu1(std::vector<std::shared_ptr<Property>>,int);
-    void meniu2(std::vector<Property>);
+    void meniu1(const std::vector<std::shared_ptr<Property>>&);
+//    void meniu2(std::vector<Property>);
     };
 
 ///sadfasdf

@@ -32,7 +32,7 @@ public:
     void set_nume();
     void set_nr_pers();
     void set_cost();
-    void def();
+    void def() ;
     virtual void def2();
     virtual void afis2() = 0;
 

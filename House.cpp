@@ -18,6 +18,7 @@ void House::define(){
     std::cout<<"Has garden(yes/no): ";std::cin>>garden;
 }
 void House::afis2(){
+    std::cout<<"Type: House";
     afis();
     std::cout<<"Has garden:"<<garden<<std::endl;
 };

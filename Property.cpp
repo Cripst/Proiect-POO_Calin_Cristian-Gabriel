@@ -11,7 +11,7 @@ Property::Property(const std::string& l,const std::string& n ,int nr, int c){
         this->nume = n;
         this->nr_pers = nr;
         this->cost = c;
-        std::cout<<"treci mai departe";
+
     }
 void Property::def(){
     set_adresa();
@@ -21,20 +21,17 @@ void Property::def(){
 
 }
 void Property::def2(){std::cout<<"nu bun"<<std::endl;}
-void Property::afis2() {std::cout<<"nu bun2"<<std::endl;}
+//void Property::afis2() {std::cout<<"nu bun2"<<std::endl;}
 
 void Property::set_adresa(){
-    std::string adresa;
+
     std::cout << "Adresa:\n";
     std::cin >> adresa;
-    this->adresa = adresa;
 }
 
 void Property::set_nume(){
-    std::string nume;
     std::cout << "Nume:\n";
     std::cin >> nume;
-    this->nume = nume;
 }
 
 void Property::set_nr_pers(){
