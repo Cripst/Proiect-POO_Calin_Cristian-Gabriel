@@ -1,7 +1,7 @@
 //
 // Created by crist on 12/2/2023.
 //
-
+#include "memory"
 #ifndef OOP_MENIU_H
 #define OOP_MENIU_H
 #include <iostream>
@@ -20,7 +20,8 @@ public:
 
     ~meniu();
     static Property create_Property();
-    void meniu1(std::vector<Property>,int);
+    void meniu1(std::vector<std::shared_ptr<Property>>,int);
+    void meniu2(std::vector<Property>);
     };
 
 ///sadfasdf

@@ -103,6 +103,12 @@ add_executable(${PROJECT_NAME} main.cpp
         Meniu.cpp
         Meniu.h
         variables.h
+        Apartament.cpp
+        Apartament.h
+        House.cpp
+        House.h
+        Cabin.cpp
+        Cabin.h
 )
 
 ###############################################################################

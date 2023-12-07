@@ -4,14 +4,24 @@
 #include <iostream>
 #include "Property.h"
 
-Property::Property(std::string l,std::string n ,int nr, int c){
+Property::Property(const std::string& l,const std::string& n ,int nr, int c){
         this->ID = contor_ID;
         contor_ID++;
         this->adresa = l;
         this->nume = n;
         this->nr_pers = nr;
         this->cost = c;
+        std::cout<<"treci mai departe";
     }
+void Property::def(){
+    set_adresa();
+    set_nume();
+    set_cost();
+    set_nr_pers();
+
+}
+void Property::def2(){std::cout<<"nu bun"<<std::endl;}
+void Property::afis2() {std::cout<<"nu bun2"<<std::endl;}
 
 void Property::set_adresa(){
     std::string adresa;
@@ -52,4 +62,10 @@ void  Property::afis(){
     std::cout<<"Numar max persoane:"<<this->nr_pers<<"\n";
     std::cout<<"Cost per noapte:"<<this->cost<<"\n";
 
+}
+
+std::ostream &operator<<(std::ostream &os, const Property &aProperty) {
+    os << "adresa: " << aProperty.adresa <<std::endl<< " nume: " << aProperty.nume <<std::endl<< " nr_pers: " << aProperty.nr_pers <<std::endl
+       << " cost: " << aProperty.cost <<std::endl<< " ID: " << aProperty.ID<<std::endl;
+    return os;
 }

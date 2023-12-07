@@ -10,7 +10,7 @@
 class Property{
 
 
-private:
+protected:
     std::string adresa;
     std::string nume;
     int nr_pers;
@@ -19,17 +19,22 @@ private:
 
 
 public:
+    friend std::ostream &operator<<(std::ostream &os, const Property &aProperty);
+
     static int contor_ID;
     void afis();
 
 
-     Property(std::string="",std::string="",int=0, int=-1);
+     explicit Property(const std::string& ="",const std::string& ="",int=0, int=-1);
     ~Property() = default;
     // Property(Property &c);
     void set_adresa();
     void set_nume();
     void set_nr_pers();
     void set_cost();
+    void def();
+    virtual void def2();
+    virtual void afis2() = 0;
 
 };
 

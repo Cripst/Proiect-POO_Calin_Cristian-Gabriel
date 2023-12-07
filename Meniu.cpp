@@ -3,8 +3,9 @@
 //
 
 #include "Meniu.h"
+#include "Apartament.h"
 
-    meniu::meniu(const std::string& filename) {
+meniu::meniu(const std::string& filename) {
         file.open(filename);
         if (!file.is_open()) {
             std::cerr << "Failed to open file: " << filename << std::endl;
@@ -30,10 +31,10 @@
     }
 
 ///sadfasdf
-;
 
 
-void meniu::meniu1(std::vector<Property> l, int z){
+
+void meniu::meniu1(std::vector<std::shared_ptr<Property>> l, int z){
 //    system("cls");
     int x,back;
     std::cout<<"1.Vezi locatii\n";
@@ -42,8 +43,10 @@ void meniu::meniu1(std::vector<Property> l, int z){
     switch (x)
     {
         case 1:
-            for (int i =0;i<z;i++)
-                l[i].afis();
+            for (auto i : l) {
+                i->afis2();
+//                std::i.afis()<<std::endl;
+            }
             std::cout<<"apasa orice pentru a te intoarce:\n";
 
             std::cin>> back;
@@ -51,8 +54,11 @@ void meniu::meniu1(std::vector<Property> l, int z){
 
             break;
         case 2:
-            l.push_back(this->create_Property());
-            z++;
+
+//            meniu2(l);
+//
+//            l.push_back(this->create_Property());
+
             meniu1(l,z);
 
 
@@ -66,13 +72,33 @@ void meniu::meniu1(std::vector<Property> l, int z){
 
 
 
-Property meniu::create_Property(){
-    std::string adresa,nume;
-    int p, c;
-    std::cout<<"Numele Propertyi:\n";std::cin>>nume;
-    std::cout<<"Adresa Propertyi\n";std::cin>>adresa;
-    std::cout<<"nr max pers\n";std::cin>>p;
-    std::cout<<"cost:\n";std::cin>>c;
-    Property loc(adresa,nume,p,c);
-    return loc;
+//Property meniu::create_Property(){
+//    std::string adresa,nume;
+//    int p, c;
+//    std::cout<<"Numele Propertyi:\n";std::cin>>nume;
+//    std::cout<<"Adresa Propertyi\n";std::cin>>adresa;
+//    std::cout<<"nr max pers\n";std::cin>>p;
+//    std::cout<<"cost:\n";std::cin>>c;
+//    Property loc(adresa,nume,p,c);
+//    return loc;
+//}
+
+//Property meniu::create_Property(){
+//    Property prop;
+//
+//    return prop;
+//}
+
+void meniu::meniu2(std::vector<Property> l ){
+    std::cout<<"Property type:";
+    std::cout<<"1.Apartament"<<std::endl;
+    std::cout<<"2.House"<<std::endl;
+    std::cout<<"3.Cabin"<<std::endl;
+    int x;
+    std::cin>>x;
+    if(x==1){
+
+    }
+
+
 }
