@@ -11,7 +11,7 @@
 class House: public Property {
 public:
     explicit House(const std::string& ="",const std::string& ="",int=0, int=-1,const std::string& = "no");
-    void afis2();
+    void afis2()override;
     void define();
 
 private:

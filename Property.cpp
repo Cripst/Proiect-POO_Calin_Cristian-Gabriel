@@ -20,7 +20,7 @@ void Property::def(){
     set_nr_pers();
 
 }
-void Property::def2(){std::cout<<"nu bun"<<std::endl;}
+//void Property::define(){std::cout<<"nu bun"<<std::endl;}
 //void Property::afis2() {std::cout<<"nu bun2"<<std::endl;}
 
 void Property::set_adresa(){

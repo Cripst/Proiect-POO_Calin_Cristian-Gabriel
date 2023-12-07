@@ -11,7 +11,7 @@
 class Cabin: public Property {
 public:
     explicit Cabin(const std::string& ="",const std::string& ="",int=0, int=-1,const std::string& = "");
-    void afis2();
+    void afis2()override;
     void define();
 
 private:

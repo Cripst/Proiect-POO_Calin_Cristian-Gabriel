@@ -22,4 +22,4 @@ void Cabin::afis2(){
     std::cout<<"Type: Cabin";
     afis();
     std::cout<<"It is situated: "<<garden<<std::endl;
-};
+}

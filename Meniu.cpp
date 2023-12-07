@@ -34,7 +34,7 @@ meniu::meniu(const std::string& filename) {
 
 
 
-void meniu::meniu1(const std::vector<std::shared_ptr<Property>>& l){
+void meniu::meniu1(std::vector<std::shared_ptr<Property>> l){
 //    system("cls");
     int x,back;
     std::cout<<"1.Vezi locatii\n";
@@ -42,36 +42,58 @@ void meniu::meniu1(const std::vector<std::shared_ptr<Property>>& l){
     std::cin>>x;
     switch (x)
     {
-        case 1:
-            for (auto i : l) {
+        case 1: {
+            for (auto i: l) {
+                std::cout<<"\n";
                 i->afis2();
-//                std::i.afis()<<std::endl;
-            }
-            std::cout<<"apasa orice pentru a te intoarce:\n";
-
-            std::cin>> back;
-            meniu1(l);
-
-            break;
-        case 2:
-
-//            meniu2(l);
 //
-//            l.push_back(this->create_Property());
+            }
+            std::cout << "\n\napasa orice pentru a te intoarce:\n";
+
+            std::cin >> back;
+            meniu1(l);
+
+            break;
+        }
+        case 2: {
+        std::cout<<"Type:"<<"\n"<<"1.Apartment"<<"\n"<<"2.House"<<"/n"<<"3.Cabin\n";
+        int x; std::cin>>x;
+        if(x==1) {
+                std::shared_ptr<Apartment> a = std::make_shared<Apartment>();
+                a->define();
+                l.push_back(a);
+        }
+        if(x==2){
+            std::shared_ptr<House> a = std::make_shared<House>();
+            a->define();
+            l.push_back(a);
+        }
+        if(x==3){
+            std::shared_ptr<Cabin> a = std::make_shared<Cabin>();
+            a->define();
+            l.push_back(a);
+        }
+        else meniu1(l);
+//            meniu2(l);
+//            std::shared_ptr<Apartment> a = std::make_shared<Apartment>();
+//            a->define();
+//            l.push_back(a);
 
             meniu1(l);
 
 
             break;
-        default:
+        }
+        default: {
             exit(0);
 //            return;
 //            break;
+        }
     }
 }
 
 
-
+//void meniu::create_property() {}
 //Property meniu::create_Property(){
 //    std::string adresa,nume;
 //    int p, c;

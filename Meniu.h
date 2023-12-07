@@ -9,19 +9,26 @@
 #include <fstream>
 #include "Property.h"
 #include "variables.h"
+#include "Apartament.h"
+#include "House.h"
+#include "Cabin.h"
 #include <vector>
 
 class meniu{
 private:
+    std::unique_ptr<Apartment>;
+
     std::ofstream file;
 //    time_t ultima_inregistrare;
 public:
     explicit meniu(const std::string& filename);
 
     ~meniu();
-    static Property create_Property();
-    void meniu1(const std::vector<std::shared_ptr<Property>>&);
+//    static Property create_Property();
+    void meniu1(std::vector<std::shared_ptr<Property>>);
 //    void meniu2(std::vector<Property>);
+
+
     };
 
 ///sadfasdf

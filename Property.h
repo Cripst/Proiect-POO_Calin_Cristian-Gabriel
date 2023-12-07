@@ -19,6 +19,7 @@ protected:
 
 
 public:
+
     friend std::ostream &operator<<(std::ostream &os, const Property &aProperty);
 
     static int contor_ID;
@@ -33,7 +34,7 @@ public:
     void set_nr_pers();
     void set_cost();
     void def() ;
-    virtual void def2();
+    virtual void define() = 0;
     virtual void afis2() = 0;
 
 };
