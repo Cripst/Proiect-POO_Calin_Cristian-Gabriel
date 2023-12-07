@@ -20,4 +20,4 @@ void Apartment::afis2(){
     std::cout<<"Type: Apartment";
 afis();
 std::cout<<"Floor: "<<floor<<std::endl;
-};
+}

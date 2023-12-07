@@ -66,3 +66,19 @@ std::ostream &operator<<(std::ostream &os, const Property &aProperty) {
        << " cost: " << aProperty.cost <<std::endl<< " ID: " << aProperty.ID<<std::endl;
     return os;
 }
+
+bool Property::operator==(const Property &rhs) const {
+    return adresa == rhs.adresa &&
+           nume == rhs.nume &&
+           nr_pers == rhs.nr_pers &&
+           cost == rhs.cost &&
+           ID == rhs.ID;
+}
+
+bool Property::operator!=(const Property &rhs) const {
+    return !(rhs == *this);
+}
+
+void Property::show_total() {
+    std::cout<<"Number of Accomodations:"<<contor_ID;
+}

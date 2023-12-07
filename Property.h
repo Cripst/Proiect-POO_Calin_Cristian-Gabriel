@@ -19,10 +19,14 @@ protected:
 
 
 public:
+    bool operator==(const Property &rhs) const;
+
+    bool operator!=(const Property &rhs) const;
 
     friend std::ostream &operator<<(std::ostream &os, const Property &aProperty);
 
     static int contor_ID;
+    static void show_total();
     void afis();
 
 

@@ -52,6 +52,7 @@ void meniu::meniu1(std::vector<std::shared_ptr<Property>> l){
 
             std::cin >> back;
             meniu1(l);
+            Property::show_total();
 
             break;
         }

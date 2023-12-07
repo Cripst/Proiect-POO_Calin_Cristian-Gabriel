@@ -12,6 +12,15 @@ std::shared_ptr<House> b = std::make_shared<House>("a","a",2,1,"yes");
 std::shared_ptr<Cabin> c = std::make_shared<Cabin>("c","c",2,100,"in the woods");
 
 int main(){
+    try {
+
+        std::unique_ptr<Apartment> apartment = std::make_unique<Apartment>("Modern","Apartment", 150.0, 3);
+//        apartment->afis();
+    }
+     catch (const std::exception& e) {
+        std::cerr << "Other Exception: " << e.what() << std::endl;
+    }
+
     meniu log("logg.txt");
     m.push_back(a);
     m.push_back(b);

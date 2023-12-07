@@ -109,6 +109,10 @@ add_executable(${PROJECT_NAME} main.cpp
         House.h
         Cabin.cpp
         Cabin.h
+        Room.cpp
+        Room.h
+        InvalideAtributeExceptions.cpp
+        InvalideAtributeExceptions.h
 )
 
 ###############################################################################
