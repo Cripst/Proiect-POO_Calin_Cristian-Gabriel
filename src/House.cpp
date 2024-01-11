@@ -14,11 +14,11 @@ House::House(const std::string& l,const std::string& n ,int nr, int c, const std
     this->garden = garden;
 }
 void House::define(){
-    def();
+    DefineSharedPreperty();
     std::cout<<"Has garden(yes/no): ";std::cin>>garden;
 }
-void House::afis2(){
+void House::DisplayInformation(){
     std::cout<<"Type: House";
-    afis();
+    DisplaySharedProperty();
     std::cout<<"Has garden:"<<garden<<std::endl;
 };

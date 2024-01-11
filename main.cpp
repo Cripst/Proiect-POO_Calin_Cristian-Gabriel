@@ -8,7 +8,7 @@ int main(){
     try {
 
         std::unique_ptr<Apartment> apartment = std::make_unique<Apartment>("Modern","Apartment", 150.0, 3);
-//        apartment->afis();
+//        apartment->DisplaySharedProperty();
     }
      catch (const std::exception& e) {
         std::cerr << "Other Exception: " << e.what() << std::endl;

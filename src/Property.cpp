@@ -13,7 +13,7 @@ Property::Property(const std::string& l,const std::string& n ,int nr, int c){
         this->price = c;
 
     }
-void Property::def(){
+void Property::DefineSharedPreperty(){
     set_adresa();
     set_nume();
     set_cost();
@@ -49,7 +49,7 @@ int Property::ID_count=1;
 
 
 //functie de afisare
-void  Property::afis(){
+void  Property::DisplaySharedProperty(){
 
     std::cout<<"\nID:"<<this->ID<<"\n";
     std::cout << "Adresa:" << this->adress << "\n";

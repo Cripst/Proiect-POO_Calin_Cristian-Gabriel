@@ -4,9 +4,6 @@
 #include <iostream>
 #ifndef OOP_PROPERTY_H
 #define OOP_PROPERTY_H
-
-
-#include "Property.h"
 class Property{
 
 
@@ -27,19 +24,18 @@ public:
 
     static int ID_count;
     static void show_total();
-    void afis();
+    void DisplaySharedProperty();
 
 
      explicit Property(const std::string& ="",const std::string& ="",int=0, int=-1);
     ~Property() = default;
-    // Property(Property &c);
     void set_adresa();
     void set_nume();
     void set_nr_pers();
     void set_cost();
-    void def() ;
+    void DefineSharedPreperty() ;
     virtual void define() = 0;
-    virtual void afis2() = 0;
+    virtual void DisplayInformation() = 0;
 
 };
 

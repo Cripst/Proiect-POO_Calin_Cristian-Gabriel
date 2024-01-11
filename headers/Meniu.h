@@ -16,22 +16,11 @@
 
 class meniu{
 private:
-
-
     std::ofstream file;
-//    time_t ultima_inregistrare;
 public:
     explicit meniu(const std::string& filename);
-
     ~meniu();
-//    static Property create_Property();
     void meniu1(std::vector<std::shared_ptr<Property>>);
-//    void meniu2(std::vector<Property>);
-
-
     };
-
-///sadfasdf
-
 
 #endif //OOP_MENIU_H

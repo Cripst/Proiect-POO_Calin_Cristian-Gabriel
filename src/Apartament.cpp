@@ -13,11 +13,11 @@ Apartment::Apartment(const std::string& l,const std::string& n ,int nr, int c, i
     this->floor = floor;
 }
 void Apartment::define(){
-    def();
+    DefineSharedPreperty();
     std::cout<<"The floor:";std::cin>>floor;
 }
-void Apartment::afis2(){
+void Apartment::DisplayInformation(){
     std::cout<<"Type: Apartment";
-afis();
+    DisplaySharedProperty();
 std::cout<<"Floor: "<<floor<<std::endl;
 }

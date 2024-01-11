@@ -15,11 +15,11 @@ Cabin::Cabin(const std::string& l,const std::string& n ,int nr, int c, const std
     this->garden = garden;
 }
 void Cabin::define(){
-    def();
+    DefineSharedPreperty();
     std::cout<<"Is placed (woods, mountain, ect.): ";std::cin>>garden;
 }
-void Cabin::afis2(){
+void Cabin::DisplayInformation(){
     std::cout<<"Type: Cabin";
-    afis();
+    DisplaySharedProperty();
     std::cout<<"It is situated: "<<garden<<std::endl;
 }

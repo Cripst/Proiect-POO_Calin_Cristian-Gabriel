@@ -11,7 +11,7 @@
 class Apartment: public Property {
 public:
     explicit Apartment(const std::string& ="",const std::string& ="",int=0, int=-1,int = 0);
-    void afis2 ()override;
+    void DisplayInformation ()override;
     void define()override;
 
     [[nodiscard]] virtual Apartment* clone() const {

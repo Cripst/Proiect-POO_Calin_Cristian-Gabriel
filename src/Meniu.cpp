@@ -30,12 +30,7 @@ meniu::meniu(const std::string& filename) {
         }
     }
 
-///sadfasdf
-
-
-
 void meniu::meniu1(std::vector<std::shared_ptr<Property>> l){
-//    system("cls");
     int x,back;
     std::cout<<"1.Se accomodations\n";
     std::cout<<"2.Add your own accomodation\n";
@@ -45,15 +40,14 @@ void meniu::meniu1(std::vector<std::shared_ptr<Property>> l){
         case 1: {
             for (auto i: l) {
                 std::cout<<"\n";
-                i->afis2();
+                i->DisplayInformation();
 //
             }
             std::cout << "\n\npress anything to return:\n";
 
             std::cin >> back;
-            meniu1(l);
-            Property::show_total();
 
+            meniu1(l);
             break;
         }
         case 2: {
@@ -74,11 +68,10 @@ void meniu::meniu1(std::vector<std::shared_ptr<Property>> l){
             a->define();
             l.push_back(a);
         }
+        if(x==4){
+
+        }
         else meniu1(l);
-//            meniu2(l);
-//            std::shared_ptr<Apartment> a = std::make_shared<Apartment>();
-//            a->define();
-//            l.push_back(a);
 
             meniu1(l);
 
